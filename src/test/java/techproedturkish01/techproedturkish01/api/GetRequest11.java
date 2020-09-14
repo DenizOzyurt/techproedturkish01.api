@@ -18,8 +18,11 @@ public class GetRequest11 extends TestBase {
 	// or           we can convert Java object to Json Data ==>Serialization
 	
 	
-
-		
+//"https://jsonplaceholder.typicode.com/todos/2"
+	//Assert that "completed" is false by using soft assertion
+	//Assert that "title" is "quis ut nam facilis et officia qui" by using soft assertion
+	//How to convert Java Object to Json Data ==> Serialization
+	
 		@Test
 		public void get01() {
 			
