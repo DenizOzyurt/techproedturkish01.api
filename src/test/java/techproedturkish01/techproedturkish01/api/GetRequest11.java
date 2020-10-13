@@ -10,6 +10,7 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class GetRequest11 extends TestBase {
 	
@@ -57,6 +58,9 @@ public class GetRequest11 extends TestBase {
 			
 			//How to convert Java Object to Json Data ==> Serialization
 			Gson gson = new Gson();
+			
+			String jsonToMap=gson.toJson(map);
+			
 			System.out.println(gson.toJson(map));
 	
 		}

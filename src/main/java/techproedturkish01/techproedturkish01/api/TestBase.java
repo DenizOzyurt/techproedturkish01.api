@@ -11,7 +11,8 @@ public class TestBase {
 	protected RequestSpecification spec02;
 	protected RequestSpecification spec03;
 	protected RequestSpecification spec04;
-	
+	protected RequestSpecification spec05;
+	protected RequestSpecification spec06;
 	
 	@Before
 	public void setUp01() {
@@ -38,7 +39,17 @@ public class TestBase {
 
 	@Before
 	public void setUp04() {
-		spec04=new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com/booking").build();
+		spec04=new RequestSpecBuilder().setBaseUri("http://dummy.restapiexample.com/api/v1").build();
+	}
+	
+	@Before
+	public void setUp05() {
+		spec05=new RequestSpecBuilder().setBaseUri("http://api.openweathermap.org").build();
+	}
+	
+	@Before
+	public void setUp06() {
+		spec06=new RequestSpecBuilder().setBaseUri("http://api.agromonitoring.com").build();
 	}
 	
 }
