@@ -2,6 +2,9 @@ package techproedturkish01.techproedturkish01.api;
 
 import static io.restassured.RestAssured.given;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
@@ -41,13 +44,19 @@ Süleyman Alptekin  3:24 AM
 		Response response = given().spec(spec02).pathParam("bookingid", 3).get("/{bookingid}");
 		response.prettyPrint();
 		
+		Map<String,Object> map = new HashMap();
+		map.put("firstname","Mary");
+		map.put("totalprice",535);
+		map.put("depositpaid",false);
+		map.put("checkin","2019-07-10");
+		
 		response.then().assertThat().
 			statusCode(200).
 		contentType(ContentType.JSON).
 			statusLine("HTTP/1.1 200 OK").
-		body("firstname", Matchers.equalTo("Mark"),
-				"bookingdates.checkin",Matchers.equalTo("2015-03-31"),
-				"depositpaid",Matchers.equalTo(true));
+		body("firstname", Matchers.equalTo(map.get("firstname")),
+				"bookingdates.checkin",Matchers.equalTo(map.get("checkin")),
+				"depositpaid",Matchers.equalTo(map.get("depositpaid")));
 	}
 	
 }
